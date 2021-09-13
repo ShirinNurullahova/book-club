@@ -1,0 +1,46 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: $pastel-pink;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+    background-color:rgb(255, 238, 248) ;
+    &__logo {
+        font-size: 20px;
+        cursor: pointer;
+
+        p,span {
+            font-weight: 600;
+        }
+
+        span {
+            color: $button-bg-color-secondary;
+        }
+    }
+
+    ul {
+        display: flex;
+        color: $button-bg-color-secondary;
+
+        li {
+            list-style: none;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        li:hover {
+            color: rgba(0, 0, 0, 0.733);
+        }
+
+        li:last-child {
+            margin-right: 0;
+        }
+    }
+}
+#dashboard {
+    display: none;
+  }
+
+  #logout-btn {
+    display: none;
+  }

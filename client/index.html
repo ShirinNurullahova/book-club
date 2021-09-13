@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/css/style.css">
+    <!-- Axios  -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom script -->
+    <script src="./script.js" defer></script>
+    <!-- Navigation scripy -->
+    <script src="./navigation.js" defer></script>
+    <title>BookClub</title>
+</head>
+<body>
+    <!-- notification -->
+    <div class="notification" id="notification"></div>
+    <!-- loader -->
+    <div id="loader">
+        <img src="./assets/icons/loader.svg" alt="loader">
+    </div>
+    <div class="wrapper" id="wrapper">
+        <div class="heading">
+            <div class="navigation">
+            <ul class="navigation__sections">
+                <li id="all-books">Books</li>
+                <li id="all-authors">Authors</li>
+            </ul>
+            <div class="navigation__logo" id="logo">
+                <p>Book<span>Club</span></p>
+            </div>
+            <ul class="navigation__auth">
+                <li id="login-btn">Login</li>
+                <li id="signup-btn">Sign Up</li>
+                <li id="logout-btn">Log out</li>
+                <li id="dashboard">Dashboard</li>
+            </ul>
+            </div>
+        </div>
+         <!-- FIRST 3 BOOKS -->
+         <div class="book-selection" id="first-3">
+        </div>
+         <!-- TOP SELLING 5 BOOKS -->
+         <div class="top-selling">
+            <h3 class="top-selling__heading">top selling books</h3>
+            <div class="top-selling__books" id="top-selling"></div>
+        </div>
+        <!-- AUTHORS -->
+        <div class="authors">
+            <h3 class="authors__heading">Authors</h3>
+        <!-- AUTHORS LOADER -->
+        <div class="authors__loader" id="authors-loader">
+                <img src="./assets/icons/author-loader.svg" alt="loader">
+        </div>     
+            <div class="authors__wrapper" id="authors">
+        </div>
+        </div>
+        <div class="footer navigation__logo">
+            <p>BookClub</p>
+            <span>&copy; Shirin Nurullahova 2021</span>
+        </div>
+    </div>
+    <!-- signup modal -->
+    <div class="signup-modal" id="signup-modal">
+        <img
+            src="./assets/icons/cancel.svg"
+            alt="cancel" class="signup-modal__close"
+            id="signup-modal-close"
+        >
+        <form id="signup-form">
+            <input
+                type="text"
+                id="name"
+                placeholder="type name"
+                autocomplete="off"
+            >
+            <input
+                type="text"
+                id="surname"
+                placeholder="type surname"
+                autocomplete="off"
+            >
+            <input
+                type="text"
+                id="mail"
+                placeholder="enter mail"
+                autocomplete="off"
+            >
+            <input
+                type="password"
+                id="password"
+                placeholder="enter password"
+            >
+            <button id="sign-up-submit">SIGN UP</button>
+        </form>
+    </div>
+    <!-- login modal -->
+    <div class="signup-modal" id="login-modal">
+        <img
+          src="./assets/icons/cancel.svg"
+          alt="cancel"
+          class="signup-modal__close"
+          id="login-modal-close"
+        />
+        <form id="login-form">
+          <input type="text" id="login-mail" required placeholder="enter mail" />
+          <input
+            type="password"
+            required
+            id="login-password"
+            placeholder="enter password"
+          />
+          <button id="login-submit">LOGIN</button>
+        </form>
+      </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+.top-selling {
+    margin: 0 auto;
+    padding: 50px 80px;
+    background-color: $pastel-aqua;
+
+    &__heading {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $color-green-darker;
+        margin-bottom: 50px; 
+    }
+
+    &__books {
+        display: flex;
+        justify-content: space-between;
+
+        &__item {
+            img {
+                width: 200px;
+                min-height: 300px;
+            }
+    
+            h4 {
+                font-weight: bold;
+                color: $color-green;
+                max-width: 200px;
+                font-size: 1.2rem;
+            }
+
+            &__author {
+                margin: 10px 0;
+                color: $color-light-gray;
+                span {
+                    font-weight: bold;
+                    color: $color-green-darker;
+                }
+            }
+
+            &__price {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: $color-green;
+            }
+        }
+    }
+}

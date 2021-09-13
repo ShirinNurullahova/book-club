@@ -1,0 +1,63 @@
+.dashboard {
+    padding: 50px 80px;
+  
+    &__heading {
+      color: $color-green-darker;
+      font-weight: bold;
+    }
+  
+    &__navigation {
+      display: flex;
+      margin-top: 40px;
+  
+      &__active {
+        border-bottom: 1px solid $color-green;
+      }
+  
+      li {
+        list-style: none;
+        margin-right: 30px;
+        cursor: pointer;
+        color: $color-green;
+        font-size: 1.2rem;
+      }
+    }
+  
+    table {
+      width: 100%;
+      border: 1px solid black;
+      margin-top: 30px;
+  
+      th {
+        font-weight: bold;
+  
+        &:last-child {
+          text-align: center;
+  
+          img {
+            transform: rotate(45deg);
+            width: 20px;
+          }
+        }
+      }
+  
+      th,
+      tr,
+      td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 5px 10px;
+  
+        td:last-child {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+  
+          img {
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+  

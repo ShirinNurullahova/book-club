@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap"
+    />
+     <!-- style -->
+    <link rel="stylesheet" href="./styles/css/style.css" />
+    <!-- custom -->
+    <script src="./dashboard.js" defer></script>
+    <!-- navigation -->
+    <script src="./navigation.js" defer></script>
+    <script src="./script.js" defer></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <!-- notification -->
+    <div class="notification" id="notification"></div>
+    <!-- loader -->
+    <div id="loader">
+        <img src="./assets/icons/loader.svg" alt="loader" />
+    </div>
+    <div class="wrapper" id="wrapper">
+        <div class="heading">
+            <div class="navigation">
+              <ul class="navigation__sections">
+                <li id="all-books">Books</li>
+                <li id="all-authors">Authors</li>
+              </ul>
+              <div class="navigation__logo" id="logo">
+                <p>Book<span>Club</span></p>
+              </div>
+              <ul class="navigation__auth">
+                <li id="login-btn">Login</li>
+                <li id="signup-btn">Sign Up</li>
+                <li id="logout-btn">Log out</li>
+                <li id="dashboard">Dashboard</li>
+              </ul>
+            </div>
+        </div>
+        <div class="dashboard" id="dash">
+            <h1 class="dashboard__heading">Dashboard</h1>
+            <ul class="dashboard__navigation" id="dashboard-navigation">
+                <li id="books-dash" >Books</li>
+                <li id="authors-dash">Authors</li>
+                <li id="users-dash">Users</li>
+            </ul>
+            <div class="dashboard__table" id="dash-table">
+        
+            </div>
+              
+        </div>
+    </div>
+     <!-- signup modal -->
+     <div class="signup-modal" id="signup-modal">
+        <img
+            src="./assets/icons/cancel.svg"
+            alt="cancel" class="signup-modal__close"
+            id="signup-modal-close"
+        >
+        <form id="signup-form">
+            <input
+                type="text"
+                id="name"
+                placeholder="type name"
+                autocomplete="off"
+            >
+            <input
+                type="text"
+                id="surname"
+                placeholder="type surname"
+                autocomplete="off"
+            >
+            <input
+                type="text"
+                id="mail"
+                placeholder="enter mail"
+                autocomplete="off"
+            >
+            <input
+                type="password"
+                id="password"
+                placeholder="enter password"
+            >
+            <button id="sign-up-submit">SIGN UP</button>
+        </form>
+    </div>
+    <!-- login modal -->
+    <div class="signup-modal" id="login-modal">
+        <img
+          src="./assets/icons/cancel.svg"
+          alt="cancel"
+          class="signup-modal__close"
+          id="login-modal-close"
+        />
+        <form id="login-form">
+          <input type="text" id="login-mail" required placeholder="enter mail" />
+          <input
+            type="password"
+            required
+            id="login-password"
+            placeholder="enter password"
+          />
+          <button id="login-submit">LOGIN</button>
+        </form>
+      </div>
+       <!-- ADD BOOK MODAL -->
+    <div class="book-details-modal" id="book-details-modal">
+      <img src="./assets/icons/cancel.svg" alt="cancel" class="book-details-modal__close" id="book-details-modal-close">
+      <form id="book-details-modal-form">
+          <input type="text" id="id" disabled placeholder="#id">
+          <input type="text" id="title" required placeholder="book title" autocomplete="off">
+          <input type="text" id="author" required placeholder="book author" autocomplete="off">
+          <input type="text" id="publisher" placeholder="publisher" autocomplete="off">
+          <input type="number" step="0.01" id="price" placeholder="enter price" autocomplete="off">
+          <input type="text" id="imageUrl" placeholder="enter image url" autocomplete="off">
+          <div class="book-details-modal__genres">
+              <p>Genres :</p>
+              <div>
+                  <label for="drama">drama</label>
+                  <input type="checkbox" id="drama" name="drama" value="drama">
+              </div>
+              <div>
+                  <label for="classics">classics</label>
+                  <input type="checkbox" id="classics" name="classics" value="classics"> 
+              </div>
+              <div>
+                  <label for="novel">novel</label>
+                  <input type="checkbox" id="novel" name="novel" value="novel">
+              </div>
+              <div>
+                  <label for="history">history</label>
+                  <input type="checkbox" id="history" name="history" value="history">
+              </div>
+              <div>
+                  <label for="children">children</label>
+                  <input type="checkbox" id="children" name="children" value="children">
+              </div>
+              <div>
+                  <label for="biography">biography</label>
+                  <input type="checkbox" id="biography" name="biography" value="biography">
+              </div>
+              <div>
+                  <label for="fiction">fiction</label>
+                  <input type="checkbox" id="fiction" name="fiction" value="fiction">
+              </div>
+              <div>
+                  <label for="animal">animal</label>
+                  <input type="checkbox" id="animal" name="animal" value="animal">
+              </div>
+              <div>
+                  <label for="detective">detective</label>
+                  <input type="checkbox" id="detective" name="detective" value="detective">
+              </div>
+              <div>
+                  <label for="fantasy">fantasy</label>
+                  <input type="checkbox" id="fantasy" name="fantasy" value="fantasy">
+              </div>
+              <div>
+                  <label for="espionage">espionage</label>
+                  <input type="checkbox" id="espionage" name="espionage" value="espionage">
+              </div>
+          </div>
+          <textarea id="synopsis" placeholder="enter short description"></textarea>
+
+          <div class="book-details-modal__radio">
+              <p>Book Cover :</p>
+              <div>
+                  <label for="hard">Hard</label>
+                  <input type="radio" id="hard" name="book-cover" checked>
+
+                  <label for="soft">Soft</label>
+                  <input type="radio" id="soft" name="book-cover">
+              </div>
+          </div>
+
+          <input type="text" id="publishDay" placeholder="published in" autocomplete="off">
+          <input type="text" id="sold" placeholder="units sold" autocomplete="off">
+          <button id="book-details-submit">PUBLISH</button>
+      </form>
+  </div>
+   <!-- Authors details modal -->
+  <div class="author-details-modal" id="author-details-modal">
+    <img src="./assets/icons/cancel.svg" alt="cancel" class="author-details-modal__close" id="author-details-modal-close">
+    <form id="author-details-modal-form">
+        <input type="text" id="author-id" disabled placeholder="#id">
+        <input type="text" id="author-name" required placeholder=" name" autocomplete="off">
+        <button id="author-details-submit">Add</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+}
+.footer {
+    background-color: $color-green;
+    padding: 20px;
+    text-align: center;
+    color: white;
+
+    span {
+      font-size: 1rem;
+      font-weight: 100;
+      color: white !important;
+    }
+  }
+  #loader {
+    display: none;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    img {
+      width: 100%;
+    }
+  }

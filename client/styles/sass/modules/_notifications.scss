@@ -1,0 +1,57 @@
+@keyframes notification {
+    0% {
+      opacity: 1;
+      top: -50px;
+    }
+  
+    20% {
+      top: 50px;
+    }
+  
+    70% {
+      top: 50px;
+    }
+  
+    80% {
+      top: -50px;
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .notification {
+    opacity: 0;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    z-index: 999;
+  }
+  
+  .animation {
+    animation-name: notification;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+  }
+  
+  .success {
+    background-color: rgba(0, 128, 0, 0.932);
+  }
+
+  .error {
+    background-color: rgba(255, 0, 0, 0.897);
+  }
+  
+  .bye {
+    background-color: royalblue;
+  }
+  
